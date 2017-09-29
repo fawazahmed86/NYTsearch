@@ -1,0 +1,1 @@
+var myfirstvariable = 0;
