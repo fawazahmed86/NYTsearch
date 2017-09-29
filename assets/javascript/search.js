@@ -1,6 +1,8 @@
 function createQueryString(){
    
-  var searchTerm = $("").val;
+  var searchTerm = "japan";
+  // $("#searchFinder").val();
+  console.log(searchTerm)
   var limits = 5;
   var startYear = 2015;
   var endYear = 2017;
@@ -16,7 +18,7 @@ function runquery(queryURL) {
     url: queryURL,
     method: "GET"
   }).done(function(response) {
-
+      
       console.log(response);
       console.log(response.response.docs);
       
@@ -43,8 +45,9 @@ function parseInfo(details){
     results.articleURL = begin[i].web_url;
     results.section = begin[i].section_name;
     results.date = begin[i].pub_date;
+    $("#headlines").append(results); 
   }
-  console.log(results); 
+    console.log(results); 
 }
 function renderHtml(response) {
   //I will iterate through the response and creat the html needed with varibales intereted 
